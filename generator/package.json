@@ -6,7 +6,8 @@
   "scripts": {
     "babel": "babel src --out-dir . --ignore /templates",
     "watch": "babel src --watch --out-dir . --ignore /templates",
-    "prepublish": "npm run babel"
+    "prepublish": "npm run snyk-protect && npm run babel",
+    "snyk-protect": "snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -37,7 +38,8 @@
     "lodash": "^4.13.1",
     "racket-template": "^1.3.1",
     "underscore.string": "^3.3.4",
-    "yeoman-generator": "^0.21.2"
+    "yeoman-generator": "^5.0.0",
+    "@snyk/protect": "latest"
   },
   "engines": {
     "node": "^4.1.1",
@@ -46,5 +48,6 @@
   "devDependencies": {
     "babel-cli": "^6.9.0",
     "babel-preset-es2015": "^6.9.0"
-  }
+  },
+  "snyk": true
 }
